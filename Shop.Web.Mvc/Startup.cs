@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Shop.Infra.Data.Context;
+using Shop.Infraestructure.IoC;
 
 namespace Shop.Web.Mvc
 {
@@ -29,6 +30,7 @@ namespace Shop.Web.Mvc
                 options.UseSqlServer(
                     Configuration.GetConnectionString("ShopConnection"));
             });
+            RegisterServices(services);
             services.AddControllersWithViews();
         }
 
@@ -55,6 +57,11 @@ namespace Shop.Web.Mvc
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
     }
 }
