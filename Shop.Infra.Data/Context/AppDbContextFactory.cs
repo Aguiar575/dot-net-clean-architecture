@@ -9,7 +9,7 @@ namespace Shop.Infra.Data.Context
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer("Data Source=localhost\\mssqllocaldb;Initial Catalog=ShopDB;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=localhost,1433;Initial Catalog=ShopDB;User Id=sa;Password=@b4c4t3!");
             return new AppDbContext(optionsBuilder.Options);
         }
     }
