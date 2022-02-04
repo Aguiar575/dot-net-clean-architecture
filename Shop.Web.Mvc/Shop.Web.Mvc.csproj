@@ -20,11 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Views\Products\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Products\" />
   </ItemGroup>
 </Project>
